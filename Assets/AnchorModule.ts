@@ -1,98 +1,82 @@
-/**
- * ## Anchors
- * Define and track poses in world space.
- */
-
 import {
-  SpatialPersistence,
-  AreaDeactivatedEvent,
-} from "./SpatialPersistence/SpatialPersistence";
-import { AnchorSession, AnchorSessionOptions } from "./AnchorSession";
-/**
- * Create, scan for, save and delete Anchors.
- */
+  AnchorSession,
+  AnchorSessionOptions,
+} from './Spatial Anchors/AnchorSession';
+
+import { Anchor } from './Spatial Anchors/Anchor';
+import { AnchorComponent } from './Spatial Anchors/AnchorComponent';
+import { AnchorModule } from './Spatial Anchors/AnchorModule';
+import { PinchButton } from './SpectaclesInteractionKit/Components/UI/PinchButton/PinchButton';
+
 @component
-export class AnchorModule extends BaseScriptComponent {
-  /**
-   * Storage context for anchors.
-   */
-  @input storage: LocationCloudStorageModule;
+export class AnchorPlacementController extends BaseScriptComponent {
+  @input anchorModule: AnchorModule;
+  @input createAnchorButton: PinchButton;
 
-  // temporary
-  @input connectedLensModule: ConnectedLensModule;
-  @input useLocalStorage: boolean = true;
-  @input debug: boolean = true;
+  @input camera: SceneObject;
+  @input prefab: ObjectPrefab;
 
-  private _spatialPersistence: SpatialPersistence;
-  private _session?: AnchorSession;
+  private anchorSession?: AnchorSession;
 
-  static theSpatialPersistenceFactory?: () => SpatialPersistence; // for mocking dependency injection
-
-  /**
-   * Open a session for scanning for anchors in the area.
-   */
-  async openSession(options: AnchorSessionOptions): Promise<AnchorSession> {
-    await this._haveInitialized;
-
-    if (this._session) {
-      throw new Error("Only one session may be active at a time.");
-    }
-    this._spatialPersistence.selectArea(null);
-
-    this._session = new AnchorSession(
-      options,
-      this._spatialPersistence,
-      async (session: AnchorSession): Promise<void> => {
-        await this.onClosed(session);
-      },
-    );
-
-    return this._session;
-  }
-
-  // implementation details
-  onAwake() {
-    this._spatialPersistence =
-      AnchorModule.theSpatialPersistenceFactory !== undefined
-        ? AnchorModule.theSpatialPersistenceFactory()
-        : new SpatialPersistence(
-            this.storage,
-            this.connectedLensModule,
-            this.useLocalStorage,
-            20, // mappingInterval
-            0.5, // resetDelayInS
-            this.debug,
-            true, // incrementalMapping
-            false, // enableLoggingPoseSettling
-          );
-
-    this._spatialPersistence.awake(this.sceneObject, this);
-  }
-
-  private async onClosed(session: AnchorSession) {
-    return await new Promise<void>((resolve, reject) => {
-      let registration = this._spatialPersistence.onAreaDeactivated.add(
-        (areaDeactivatedEvent: AreaDeactivatedEvent) => {
-          this._spatialPersistence.onAreaDeactivated.remove(registration);
-          resolve();
-        },
-      );
-      this._spatialPersistence.selectArea(null);
-      this._session = undefined;
+  async onAwake() {
+    this.createEvent('OnStartEvent').bind(() => {
+      this.onStart();
     });
   }
-    
-  //Updating the anchors logic
-  
 
-  _initialized?: Promise<void>;
-  private get _haveInitialized(): Promise<void> {
-    if (!this._initialized) {
-      const waitForInitialization = async (): Promise<void> => {
-        await this._spatialPersistence.initialize();
-      };
-      this._initialized = waitForInitialization();
+  async onStart() {
+    this.createAnchorButton.onButtonPinched.add(() => {
+      this.createAnchor();
+    });
+
+    // Set up the AnchorSession options to scan for World Anchors
+    const anchorSessionOptions = new AnchorSessionOptions();
+    anchorSessionOptions.scanForWorldAnchors = true;
+
+    // Start scanning for anchors
+    this.anchorSession =
+      await this.anchorModule.openSession(anchorSessionOptions);
+
+    // Listen for nearby anchors
+    this.anchorSession.onAnchorNearby.add(this.onAnchorNearby.bind(this));
+  }
+
+  public onAnchorNearby(anchor: Anchor) {
+    print('Anchor found: ' + anchor.id);
+    this.attachNewObjectToAnchor(anchor);
+  }
+
+  private async createAnchor() {
+    // Compute the anchor position 5 units in front of user
+    let toWorldFromDevice = this.camera.getTransform().getWorldTransform();
+    let anchorPosition = toWorldFromDevice.mult(
+      mat4.fromTranslation(new vec3(0, 0, -5))
+    );
+
+    // Create the anchor
+    let anchor = await this.anchorSession.createWorldAnchor(anchorPosition);
+
+    // Create the object and attach it to the anchor
+    this.attachNewObjectToAnchor(anchor);
+
+    // Save the anchor so it's loaded in future sessions
+    try {
+      this.anchorSession.saveAnchor(anchor);
+    } catch (error) {
+      print('Error saving anchor: ' + error);
     }
-    return this._initialized;
+  }
+
+  private attachNewObjectToAnchor(anchor: Anchor) {
+    // Create a new object from the prefab
+    let object: SceneObject = this.prefab.instantiate(this.getSceneObject());
+    object.setParent(this.getSceneObject());
+
+    // Associate the anchor with the object by adding an AnchorComponent to the
+    // object and setting the anchor in the AnchorComponent.
+    let anchorComponent = object.createComponent(
+      AnchorComponent.getTypeName()
+    ) as AnchorComponent;
+    anchorComponent.anchor = anchor;
   }
 }
