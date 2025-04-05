@@ -19,7 +19,7 @@ export class SurfaceDetection extends BaseScriptComponent {
     private worldQueryModule = require("LensStudio:WorldQueryModule") as WorldQueryModule;
 
     // Set min and max hit distance to surfaces
-    private readonly MAX_HIT_DISTANCE = 1000;
+    private readonly MAX_HIT_DISTANCE = 500;
     private readonly MIN_HIT_DISTANCE = 50;
 
     // Number of frames before surface detection completes

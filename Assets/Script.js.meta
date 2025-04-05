@@ -1,0 +1,45 @@
+- !<AssetImportMetadata/970de423-d381-49ac-ac23-109b797b3995>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 1ef27df1-80b4-4db4-912e-59d12c54af1d
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 1ef27df1-80b4-4db4-912e-59d12c54af1d
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> a59d36b6-7bb3-4b5d-8bf8-28bcb554ca74
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/a59d36b6-7bb3-4b5d-8bf8-28bcb554ca74>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 8ae94d60-88b8-466f-8d50-357488b4e5cd
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    leftButton: false
+    notesImage: false
+    remoteMediaModule: false
+    remoteServiceModule: false
+    rightButton: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      remoteMediaModule: !<reference.RemoteMediaModule> 00000000-0000-0000-0000-000000000000
+      notesImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      leftButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rightButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
