@@ -1,16 +1,82 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 608
+    size: 735
     values:
       - Base.png
       - Echopark.hdr
+      - Head.mesh
       - MaterialParams.png
       - Normal.png
       - PBR 2.mat
+      - PBR 3.mat
+      - PBR 4.mat
       - PBR.mat
+      - Primitive Pack
+      - Primitive Pack/.hidden
+      - Primitive Pack/.hidden/primitive_sample_material.ss_graph
+      - Primitive Pack/Primitive Pack Resources/Materials
+      - Primitive Pack/Primitive Pack Resources/Materials/primitive_sample_material.mat
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Capsule.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Cone.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Cube.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Cylinder.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Disc.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Head.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Joint.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftFoot.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftHand.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftJoint.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftJoint_2.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftJoint_3.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftLower_Arm.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftShin.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftThigh.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/LeftUpper_Arm.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Pelvis.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Plane.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Platonic.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Pyramid.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Right_Hand.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Right_Lower_Arm.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Right_Shin.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Right_Thigh.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Right_Upper_Arm.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Sphere.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Torus.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Tube.mesh
+      - Primitive Pack/Primitive Pack Resources/Meshes/Primitive/Meshes/Upper_Body.mesh
+      - Primitive Pack/PrimitivePack__PLACE_IN_OBJECTS_PANEL.prefab
       - Script.js
       - Script.prefab
+      - Spatial Anchors.lspkg/AlignmentProvider.ts
+      - Spatial Anchors.lspkg/Anchor.ts
+      - Spatial Anchors.lspkg/AnchorComponent.ts
+      - Spatial Anchors.lspkg/AnchorModule.ts
+      - Spatial Anchors.lspkg/AnchorSession.ts
+      - Spatial Anchors.lspkg/SpatialPersistence
+      - Spatial Anchors.lspkg/SpatialPersistence/Logging.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/MapScanning.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/MappingTrackingSession.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/Model.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/PersistentStorage.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/Queue.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/SpatialPersistence.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/SpatialPersistenceComponent.ts
+      - Spatial Anchors.lspkg/SpatialPersistence/Tracking.ts
+      - Spatial Anchors.lspkg/Util
+      - Spatial Anchors.lspkg/Util/Event.ts
+      - Spatial Anchors.lspkg/Util/LensConfig.ts
+      - Spatial Anchors.lspkg/Util/Singleton.ts
+      - Spatial Anchors.lspkg/Util/UpdateDispatcher.ts
+      - Spatial Anchors.lspkg/Util/Util.ts
+      - Spatial Anchors.lspkg/Util/algorithms.ts
+      - Spatial Anchors.lspkg/Util/debounce.ts
+      - Spatial Anchors.lspkg/WorldAnchor.ts
+      - Spatial Anchors.lspkg/package.native
+      - SpectaclesInteractionKit
       - SpectaclesInteractionKit/Assets
       - SpectaclesInteractionKit/Assets/Audio
       - SpectaclesInteractionKit/Assets/Audio/HoverAudioTrack.wav
@@ -588,6 +654,31 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Utils/views/MeshView.ts
       - SpectaclesInteractionKit/Utils/views/View.ts
       - SpectaclesInteractionKit/package.native
+      - Surface Detection/Audio
+      - Surface Detection/Audio/CalibrationComplete.mp3
+      - "Surface Detection/Example [DELETE ME]/Example Script [EDIT].ts"
+      - "Surface Detection/Example [DELETE ME]/Materials"
+      - "Surface Detection/Example [DELETE ME]/Materials/Uber PBR.mat"
+      - "Surface Detection/Example [DELETE ME]/Meshes"
+      - "Surface Detection/Example [DELETE ME]/Meshes/Box.mesh"
+      - "Surface Detection/Example [DELETE ME]/Shaders"
+      - "Surface Detection/Example [DELETE ME]/Shaders/uber_pbr.ss_graph"
+      - "Surface Detection/Example [DELETE ME]/Textures"
+      - "Surface Detection/Example [DELETE ME]/Textures/Base.png"
+      - "Surface Detection/Example [DELETE ME]/Textures/Normal.png"
+      - Surface Detection/Materials
+      - Surface Detection/Materials/CalibrationMat.mat
+      - Surface Detection/Meshes
+      - Surface Detection/Meshes/Unit Plane.mesh
+      - Surface Detection/Scripts/CircleAnimation.ts
+      - Surface Detection/Scripts/SurfaceDetection.ts
+      - Surface Detection/Shaders
+      - Surface Detection/Shaders/CalibrationShader.ss_graph
+      - Surface Detection/SurfaceDetection__ADD_TO_SCENE.prefab
+      - Surface Detection/Textures
+      - Surface Detection/Textures/groundIcon.png
+      - Surface Detection/package.native
+      - UI Button
       - UI Button/Modules
       - UI Button/Modules/DestructionHelper.js
       - UI Button/Modules/EventModule.js
@@ -609,6 +700,42 @@ CollapsedEntities:
       - UI Button/UI Button/Textures/Image.png
       - UI Button/UI Button/UI Button.js
       - Untitled TypeScript.ts
+      - World Query Hit - Spawn On Surface
+      - World Query Hit - Spawn On Surface/Materials
+      - World Query Hit - Spawn On Surface/Materials/Plane.mat
+      - World Query Hit - Spawn On Surface/Materials/cloud.mat
+      - World Query Hit - Spawn On Surface/Materials/house.mat
+      - World Query Hit - Spawn On Surface/Materials/statue.mat
+      - World Query Hit - Spawn On Surface/Materials/tree.mat
+      - World Query Hit - Spawn On Surface/Meshes
+      - World Query Hit - Spawn On Surface/Meshes/Plane.mesh
+      - World Query Hit - Spawn On Surface/Meshes/cloud.mesh
+      - World Query Hit - Spawn On Surface/Meshes/eyes.mesh
+      - World Query Hit - Spawn On Surface/Meshes/mouth_open.mesh
+      - World Query Hit - Spawn On Surface/Meshes/mouth_smile.mesh
+      - World Query Hit - Spawn On Surface/Meshes/sit.mesh
+      - World Query Hit - Spawn On Surface/Meshes/stand.mesh
+      - World Query Hit - Spawn On Surface/Meshes/statue.mesh
+      - World Query Hit - Spawn On Surface/Meshes/tail.mesh
+      - World Query Hit - Spawn On Surface/Meshes/tree.mesh
+      - World Query Hit - Spawn On Surface/Shaders
+      - World Query Hit - Spawn On Surface/Shaders/cloud.ss_graph
+      - World Query Hit - Spawn On Surface/Shaders/pbr.ss_graph
+      - World Query Hit - Spawn On Surface/Textures
+      - World Query Hit - Spawn On Surface/Textures/Tree_base.png
+      - World Query Hit - Spawn On Surface/Textures/Tree_normal.png
+      - World Query Hit - Spawn On Surface/Textures/Tree_params.png
+      - World Query Hit - Spawn On Surface/Textures/cloud_base.png
+      - World Query Hit - Spawn On Surface/Textures/cloud_normal.png
+      - World Query Hit - Spawn On Surface/Textures/cloud_params.png
+      - World Query Hit - Spawn On Surface/Textures/house_base.png
+      - World Query Hit - Spawn On Surface/Textures/house_normal.png
+      - World Query Hit - Spawn On Surface/Textures/house_params.png
+      - World Query Hit - Spawn On Surface/Textures/statue_base.png
+      - World Query Hit - Spawn On Surface/Textures/statue_normal.png
+      - World Query Hit - Spawn On Surface/Textures/statue_params.png
+      - World Query Hit - Spawn On Surface/World Query Hit Example.prefab
+      - World Query Hit - Spawn On Surface/WorldQueryHitExample.ts
       - button.js
       - pbr.ss_graph
   options: 4
