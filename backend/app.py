@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from pdf2image import convert_from_bytes
 import fitz  # PyMuPDF
 from PIL import Image
@@ -9,11 +9,15 @@ import io
 
 app = Flask(__name__)
 
+# Directory to save uploaded assets (images)
 UPLOAD_FOLDER = 'static/assets'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+# In-memory store for latest assets
 latest_image_filenames = []
 latest_text_pages = []
+
+# ----------- Helper Functions -----------
 
 def extract_text_from_pdf(pdf_bytes):
     text_content = []
@@ -39,20 +43,22 @@ def extract_text_from_pptx(file_bytes):
             text_content.append("\n".join(slide_text))
     return text_content
 
+# ----------- API Routes -----------
+
 @app.route('/upload_notes', methods=['POST'])
 def upload_notes():
     global latest_image_filenames, latest_text_pages
+
     file = request.files['file']
     filename = file.filename.lower()
+    file_bytes = file.read()
+
     latest_image_filenames = []
     latest_text_pages = []
 
     if filename.endswith('.pdf'):
-        file_bytes = file.read()
         pages = convert_from_bytes(file_bytes)
-        text_pages = extract_text_from_pdf(file_bytes)
-        latest_text_pages = text_pages
-
+        latest_text_pages = extract_text_from_pdf(file_bytes)
         for idx, page in enumerate(pages):
             img_filename = f"{uuid.uuid4()}_{idx}.png"
             path = os.path.join(UPLOAD_FOLDER, img_filename)
@@ -60,16 +66,13 @@ def upload_notes():
             latest_image_filenames.append(img_filename)
 
     elif filename.endswith('.txt'):
-        text = extract_text_from_txt(file.read())
-        latest_text_pages = text
+        latest_text_pages = extract_text_from_txt(file_bytes)
 
     elif filename.endswith('.pptx'):
-        ppt_bytes = file.read()
-        text_slides = extract_text_from_pptx(ppt_bytes)
-        latest_text_pages = text_slides
+        latest_text_pages = extract_text_from_pptx(file_bytes)
 
     elif filename.endswith(('.png', '.jpg', '.jpeg')):
-        img = Image.open(file.stream)
+        img = Image.open(io.BytesIO(file_bytes))
         img_filename = f"{uuid.uuid4()}.png"
         path = os.path.join(UPLOAD_FOLDER, img_filename)
         img.save(path, 'PNG')
@@ -89,9 +92,15 @@ def upload_notes_result():
         "texts": latest_text_pages
     })
 
+@app.route('/static/assets/<filename>')
+def serve_asset(filename):
+    return send_from_directory(UPLOAD_FOLDER, filename)
+
 @app.route('/test', methods=['GET'])
 def test():
     return "✅ Flask backend is running!"
+
+# ----------- Run Local (optional) -----------
 
 if __name__ == "__main__":
     app.run(debug=True)

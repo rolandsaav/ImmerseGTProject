@@ -234,7 +234,7 @@
   PrefabRemaps:
     []
   Name: RocketLaunchControls
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: -35.000000, z: -30.000000}
@@ -11200,7 +11200,7 @@
   PrefabRemaps:
     []
   Name: RocketConfigurator
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11298,7 +11298,7 @@
   PrefabRemaps:
     []
   Name: "[EXAMPLE] Rocket Workshop"
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12187,7 +12187,7 @@
   PrefabRemaps:
     []
   Name: RocketPartSelector
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -35.000000, y: -1.927469, z: -100.000000}
