@@ -1,0 +1,45 @@
+- !<ObjectPrefab/cb203e37-5a78-4304-933c-3a3665e09056>
+  PackagePath: ""
+  objects:
+    - !<own> 6c4930da-49c5-4a30-8eba-1b02643501db
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/6c4930da-49c5-4a30-8eba-1b02643501db>
+  PrefabRemaps:
+    []
+  Name: Script
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9a68a301-889c-4b1d-9b6d-c0ff67277b02
+- !<ScriptComponent/9a68a301-889c-4b1d-9b6d-c0ff67277b02>
+  PrefabRemaps:
+    []
+  Name: Script
+  Enabled: true
+  ScriptAsset: !<reference> bcebcdb1-723b-44cc-b7d0-d47a7dff0084
+  ScriptInputsDefault:
+    remoteServiceModule: true
+    remoteMediaModule: true
+    notesImage: true
+    leftButton: true
+    rightButton: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      remoteMediaModule: !<reference.RemoteMediaModule> 00000000-0000-0000-0000-000000000000
+      notesImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      leftButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rightButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}

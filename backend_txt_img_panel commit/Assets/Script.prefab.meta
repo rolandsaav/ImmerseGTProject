@@ -1,0 +1,67 @@
+- !<AssetImportMetadata/0c614562-5842-413a-92f0-73eb4d28dc76>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> cb203e37-5a78-4304-933c-3a3665e09056
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> cb203e37-5a78-4304-933c-3a3665e09056
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> b9529a2f-6b74-46b3-8d33-e735a6979ae7
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/192bbf46-b7ec-4501-adfa-b2a2d2efdf39>
+  PrefabRemaps:
+    []
+  Name: Script
+  Enabled: true
+  ScriptAsset: !<reference> bcebcdb1-723b-44cc-b7d0-d47a7dff0084
+  ScriptInputsDefault:
+    remoteServiceModule: true
+    remoteMediaModule: true
+    notesImage: true
+    leftButton: true
+    rightButton: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      remoteMediaModule: !<reference.RemoteMediaModule> 00000000-0000-0000-0000-000000000000
+      notesImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      leftButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      rightButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/3337492a-29cc-4027-b5d2-8f7eaf3f71a3>
+  PrefabRemaps:
+    []
+  Name: Script
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 192bbf46-b7ec-4501-adfa-b2a2d2efdf39
+- !<ObjectPrefab/43c014dd-c53f-4b9f-af93-354f58e63d78>
+  PackagePath: ""
+  objects:
+    - !<own> 3337492a-29cc-4027-b5d2-8f7eaf3f71a3
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/b9529a2f-6b74-46b3-8d33-e735a6979ae7>
+  SourceRemaps:
+    - 6c4930da-49c5-4a30-8eba-1b02643501db: 3337492a-29cc-4027-b5d2-8f7eaf3f71a3
+    - 9a68a301-889c-4b1d-9b6d-c0ff67277b02: 192bbf46-b7ec-4501-adfa-b2a2d2efdf39
+    - cb203e37-5a78-4304-933c-3a3665e09056: 43c014dd-c53f-4b9f-af93-354f58e63d78
+  SourceState: !<own> 43c014dd-c53f-4b9f-af93-354f58e63d78
