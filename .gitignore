@@ -16,3 +16,5 @@ tsconfig.json
 *.lock
 
 # Shipped by Lens Studio
+backend_txt_img_panel commit/
+
