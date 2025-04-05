@@ -7,11 +7,12 @@ import os
 import uuid
 import io
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../static", static_url_path="/static")
 
-# Directory to save uploaded assets (images)
-UPLOAD_FOLDER = os.path.join('static', 'assets')
+# Correct absolute path to static/assets
+UPLOAD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), '../static/assets'))
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 
 # In-memory store for latest assets
 latest_image_filenames = []
