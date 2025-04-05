@@ -124,13 +124,19 @@ export class SurfaceDetection extends BaseScriptComponent {
         this.desiredPosition = this.camTrans.getWorldPosition().add(this.camTrans.forward.uniformScale(-this.DEFAULT_SCREEN_DISTANCE));
         this.desiredRotation = this.camTrans.getWorldRotation();
 
-        //check if horizontal plane is being tracked
-        if (foundNormal.distance(vec3.up()) < .1) {
+		// we need to check if the surface normal is close to perpendicular
+		// relative to global up/down
+		// we can use the dot product to accomplish this.
+		// if its perpendicular, the dot product of the surface normal and
+		// global up will be near 0
+
+        //check if vertical plane is being tracked
+        if (foundNormal.dot(vec3.up()) < 0.1) {
             //make calibration face camera
             this.desiredPosition = foundPosition;
             const worldCameraForward = this.camTrans.right.cross(vec3.up()).normalize();
             this.desiredRotation = quat.lookAt(worldCameraForward, foundNormal);
-            this.desiredRotation = this.desiredRotation.multiply(quat.fromEulerVec(new vec3(-Math.PI / 2, 0, 0)));
+            this.desiredRotation = this.desiredRotation.multiply(quat.fromEulerVec(new vec3(0, 0, 0)));
 
             this.history.push(this.desiredPosition);
             if (this.history.length > this.CALIBRATION_FRAMES) {
