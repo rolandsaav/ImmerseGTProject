@@ -48,8 +48,8 @@
   ExtraData:
     {}
   AssetDataMap:
-    Prefabs/Button Icon/Button Icon: !<own> 7363390a-40e3-49cc-9415-a936f156432b
     Prefabs/Button Background/Button Background: !<own> 8f566a55-a077-431f-a7cf-14e3d78fccbc
+    Prefabs/Button Icon/Button Icon: !<own> 7363390a-40e3-49cc-9415-a936f156432b
     Prefabs/Button Text/Button Text: !<own> 37afcdef-63e9-4f7e-a3ae-275ff607d066
   DependentFiles:
     []

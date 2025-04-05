@@ -31,6 +31,7 @@
     remoteMediaModule: false
     remoteServiceModule: false
     rightButton: false
+    textRoot: false
   ScriptTypesHidden:
     {}
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
@@ -40,6 +41,7 @@
       notesImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
       leftButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       rightButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      textRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

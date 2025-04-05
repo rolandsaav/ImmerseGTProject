@@ -3,6 +3,7 @@
 //@input Component.Image notesImage
 //@input SceneObject leftButton
 //@input SceneObject rightButton
+//@input SceneObject textRoot
 
 var imageUrls = [];
 var currentIndex = 0;
@@ -81,7 +82,8 @@ textBlocks.forEach(function(text, index) {
     textComponent.textFill.color = new vec4(1, 1, 1, 1); // white text
 
     // Random initial position (you can update this logic later)
-    textObject.getTransform().setLocalPosition(new vec3(Math.random() * 0.5, Math.random() * 0.5, 0));
+	textObject.setParent(script.textRoot);
+    //textObject.getTransform().setLocalPosition(new vec3(Math.random() * 0.5, Math.random() * 0.5, 0));
 
     // Optional: Add touch drag/move component if needed
     print("📌 Created text panel for block " + index);
