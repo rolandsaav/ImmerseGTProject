@@ -10,7 +10,7 @@ import io
 app = Flask(__name__)
 
 # Directory to save uploaded assets (images)
-UPLOAD_FOLDER = 'static/assets'
+UPLOAD_FOLDER = os.path.join('static', 'assets')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # In-memory store for latest assets
@@ -86,7 +86,7 @@ def upload_notes():
 @app.route('/upload_notes_result', methods=['GET'])
 def upload_notes_result():
     global latest_image_filenames, latest_text_pages
-    image_urls = [request.host_url + 'static/assets/' + fname for fname in latest_image_filenames]
+    image_urls = [request.host_url.rstrip('/') + '/static/assets/' + fname for fname in latest_image_filenames]
     return jsonify({
         "images": image_urls,
         "texts": latest_text_pages

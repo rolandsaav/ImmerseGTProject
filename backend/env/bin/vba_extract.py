@@ -1,4 +1,4 @@
-#!/Users/tahasecond/ar-notes-backend/env/bin/python
+#!/Users/tahasecond/Documents/GitHub/ImmerseGTProject/backend/env/bin/python3.12
 
 ##############################################################################
 #
