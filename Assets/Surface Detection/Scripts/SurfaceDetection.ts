@@ -134,8 +134,11 @@ export class SurfaceDetection extends BaseScriptComponent {
         if (foundNormal.dot(vec3.up()) < 0.1) {
             //make calibration face camera
             this.desiredPosition = foundPosition;
+            const otherUp = this.camTrans.up;
+            const lookForward = foundNormal.uniformScale(-1);
             const worldCameraForward = this.camTrans.right.cross(vec3.up()).normalize();
-            this.desiredRotation = quat.lookAt(worldCameraForward, foundNormal);
+            //this.desiredRotation = quat.lookAt(worldCameraForward, foundNormal);
+            this.desiredRotation = quat.lookAt(lookForward, otherUp);
             this.desiredRotation = this.desiredRotation.multiply(quat.fromEulerVec(new vec3(0, 0, 0)));
 
             this.history.push(this.desiredPosition);

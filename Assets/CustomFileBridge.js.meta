@@ -1,0 +1,45 @@
+- !<AssetImportMetadata/0ff88c6e-c76c-4fba-9cea-39c1b4bf571f>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 5d40e4ce-9b43-45f9-a7b3-66fab9bf6ac5
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 5d40e4ce-9b43-45f9-a7b3-66fab9bf6ac5
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> d689bf2a-198d-4931-a6f7-d6bcd15298bd
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/d689bf2a-198d-4931-a6f7-d6bcd15298bd>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 796ed1fa-f067-4fa7-b8cd-699477f5a5be
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    remoteMediaModule: false
+    remoteServiceModule: false
+    slideImage: false
+    speakerNotes: false
+    webSocketController: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      remoteMediaModule: !<reference.RemoteMediaModule> 00000000-0000-0000-0000-000000000000
+      slideImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      speakerNotes: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      webSocketController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}

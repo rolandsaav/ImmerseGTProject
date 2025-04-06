@@ -1,0 +1,45 @@
+- !<AssetImportMetadata/f5ccbc2d-1d49-459c-b76e-f9ffe56de751>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f254c1d8-aeff-4890-8d14-9eead5dd3574
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f254c1d8-aeff-4890-8d14-9eead5dd3574
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 3f4e7512-f0f5-4c86-aabb-0d16c31d8e2c
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/3f4e7512-f0f5-4c86-aabb-0d16c31d8e2c>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: ea86e041-2ccb-41c5-8268-f6b62a291f1c
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    itemPrefab: false
+    itemsCount: false
+    remoteServiceModule: false
+  ScriptTypesHidden:
+    {}
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - itemsCount: !<float> 10.000000
+      itemPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Asset.ObjectPrefab itemPrefab
+    - // @input float itemsCount = 10
+    - // @input Asset.RemoteServiceModule remoteServiceModule
